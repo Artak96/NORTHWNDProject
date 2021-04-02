@@ -1,0 +1,10 @@
+2021-03-31 18:27:35.720 +04:00 [INF] OrderOperations --- GetOrder method started
+2021-03-31 18:27:37.612 +04:00 [INF] OrderOperations --- GetOrder method finished
+2021-03-31 20:48:59.474 +04:00 [ERR] Failed executing DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Categories] (
+    [CategoryID] int NOT NULL IDENTITY,
+    [CategoryName] nvarchar(15) NOT NULL,
+    [Description] ntext NULL,
+    [Picture] image NULL,
+    CONSTRAINT [PK_Categories] PRIMARY KEY ([CategoryID])
+);

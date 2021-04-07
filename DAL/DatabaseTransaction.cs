@@ -1,12 +1,12 @@
-﻿using Core.Abstractions;
-using Core.Entities;
+﻿using NorthWndCore.Abstractions;
+using NorthWndCore.Entities;
 using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
 
-namespace DAL
+namespace NorthWndDAL
 {
     public class DatabaseTransaction : IDatabaseTransaction
     {

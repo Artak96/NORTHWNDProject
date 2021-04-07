@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core.BusinessModels
+namespace NorthWndCore.BusinessModels
 {
     public class EmployeeViewModel
     {

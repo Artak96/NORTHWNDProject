@@ -1,15 +1,13 @@
-﻿using Core.Exceptions;
+﻿using NorthWndCore.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace NORTHWNDProject.Middlewares
+namespace NorthWndAPI.Middlewares
 {
     public class ErrorHandlingMiddleware
     {
@@ -31,14 +29,12 @@ namespace NORTHWNDProject.Middlewares
             catch (LogicException logicException)
             {
                 var message = logicException.InnerException?.Message ?? logicException.Message;
-                //Log.Logger.Error(logicException, "");
                _logger.LogError(logicException, "");
                 await WriteToResponse(context, message, HttpStatusCode.BadRequest);
             }
             catch (Exception ex)
             {
                 var message = ex.InnerException?.Message ?? ex.Message;
-                //Log.Logger.Error(ex, "");
                 _logger.LogError(ex, "");
                 await WriteToResponse(context, message, HttpStatusCode.InternalServerError);
             }

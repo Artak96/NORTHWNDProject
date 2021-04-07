@@ -2,42 +2,42 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Core.Abstractions.Operations;
-using Core.BusinessModels;
+using NorthWndCore.Abstractions.Operations;
+using NorthWndCore.BusinessModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace NORTHWNDProject.Controllers
+namespace NorthWndAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class OrderDetailController : ControllerBase
     {
-        private readonly IOrderDetailOperations _orderDetailOperations;
-        public OrderDetailController(IOrderDetailOperations orderDetailOperations)
+        private readonly IOrderDetailOperations _orderDetail;
+        public OrderDetailController(IOrderDetailOperations orderDetail)
         {
-            _orderDetailOperations = orderDetailOperations;
+            _orderDetail = orderDetail;
         }
 
         [HttpGet("{id}")]
         public IActionResult GetById([FromRoute]int id)
         {
-            var result = _orderDetailOperations.Get(id);
+            var result = _orderDetail.Get(id);
             return Ok(result);
         }
 
         [HttpGet]
         public IActionResult GetAll()
         {
-            var result = _orderDetailOperations.GetAll();
+            var result = _orderDetail.GetAll();
             return Ok(result);
         }
 
         [HttpPost]
         public IActionResult Add([FromBody]OrderDetailViewModel model)
         {
-            var result = _orderDetailOperations.Add(model);
+            var result = _orderDetail.Add(model);
             return Ok(result);
         }
 
@@ -45,7 +45,7 @@ namespace NORTHWNDProject.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult Update([FromBody]OrderDetailViewModel model)
         {
-            var result = _orderDetailOperations.Update(model);
+            var result = _orderDetail.Update(model);
             return Ok(result);
         }
 
@@ -53,14 +53,14 @@ namespace NORTHWNDProject.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult Rempve([FromRoute]int id)
         {
-            _orderDetailOperations.Delete(id);
+            _orderDetail.Delete(id);
             return Ok();
         }
 
         [HttpGet("OrdersDoubleEntry")]
         public IActionResult OrdersDoubleEntry()
         {
-            var res = _orderDetailOperations.GetDoubleEntries();
+            var res = _orderDetail.GetDoubleEntries();
             return Ok(res);
         }
 
@@ -68,7 +68,7 @@ namespace NORTHWNDProject.Controllers
         [HttpGet("OrdersDoubleEntryDetails")]
         public IActionResult OrdersDoubleEntryDetails()
         {
-            var res = _orderDetailOperations.GetDoubleEntriesDetails();
+            var res = _orderDetail.GetDoubleEntriesDetails();
             return Ok(res);
         }
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core.BusinessModels.QueryListMdel
+namespace NorthWndCore.BusinessModels.QueryListMdel
 {
     public class ProductsNeedReordering
     {

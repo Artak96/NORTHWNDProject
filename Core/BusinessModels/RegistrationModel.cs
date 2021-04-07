@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace Core.BusinessModels
+namespace NorthWndCore.BusinessModels
 {
     public class RegistrationModel
     {

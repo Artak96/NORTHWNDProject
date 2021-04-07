@@ -1,11 +1,11 @@
-﻿using Core.BusinessModels;
-using Core.BusinessModels.QueryListMdel;
-using Core.Entities;
+﻿using NorthWndCore.BusinessModels;
+using NorthWndCore.BusinessModels.QueryListMdel;
+using NorthWndCore.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core.Abstractions.Operations
+namespace NorthWndCore.Abstractions.Operations
 {
     public interface ICustomerOperations
     {

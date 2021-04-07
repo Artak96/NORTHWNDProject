@@ -1,11 +1,11 @@
-﻿using Core.Abstractions.Repositories;
-using Core.Entities;
+﻿using NorthWndCore.Abstractions.Repositories;
+using NorthWndCore.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace DAL
+namespace NorthWndDAL
 {
     public class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {

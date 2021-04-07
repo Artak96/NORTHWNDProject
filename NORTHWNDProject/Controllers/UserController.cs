@@ -2,25 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Core.Abstractions;
-using Core.Abstractions.Operations;
-using Core.BusinessModels;
-using Core.CustomAttributes;
+using NorthWndCore.Abstractions;
+using NorthWndCore.Abstractions.Operations;
+using NorthWndCore.BusinessModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace NORTHWNDProject.Controllers
+namespace NorthWndAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
     [Authorize]
     public class UserController : ControllerBase
     {
-        private readonly IUserOperations _userOperations;
-        public UserController(IUserOperations userOperations)
+        private readonly IUserOperations _user;
+        public UserController(IUserOperations user)
         {
-            _userOperations = userOperations;
+            _user = user;
         }
 
         [HttpPost("login")]
@@ -29,7 +28,7 @@ namespace NORTHWNDProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                await _userOperations.Login(model, HttpContext);
+                await _user.Login(model, HttpContext);
                 return Ok();
             }
             return BadRequest();
@@ -41,7 +40,7 @@ namespace NORTHWNDProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                await _userOperations.Register(model, HttpContext);
+                await _user.Register(model, HttpContext);
                 return Ok();
             }
             return BadRequest();
@@ -50,17 +49,8 @@ namespace NORTHWNDProject.Controllers
         [HttpPost("logout")]
         public async Task<IActionResult> Logout()
         {
-            await _userOperations.Logout(HttpContext);
+            await _user.Logout(HttpContext);
             return Ok();
         }
-        
-
-        //[HttpGet("custom")]
-        //[ClaimRequirement("role", "user")]
-        //public async Task<IActionResult> CustomAction()
-        //{
-        //    await _userOperations.Logout(HttpContext);
-        //    return Ok();
-        //}
     }
 }

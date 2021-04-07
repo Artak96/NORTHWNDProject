@@ -1,8 +1,8 @@
-﻿using Core.Abstractions;
-using Core.Abstractions.Operations;
-using Core.BusinessModels;
-using Core.Entities;
-using Core.Exceptions;
+﻿using NorthWndCore.Abstractions;
+using NorthWndCore.Abstractions.Operations;
+using NorthWndCore.BusinessModels;
+using NorthWndCore.Entities;
+using NorthWndCore.Exceptions;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
@@ -70,7 +70,6 @@ namespace BLL.Operations
             var claims = new List<Claim>
             {
                 new Claim(ClaimsIdentity.DefaultNameClaimType, userName),
-                //new Claim("role", "admin")
             };
             await context.SignOutAsync();
             ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);

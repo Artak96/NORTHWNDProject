@@ -1,9 +1,9 @@
-﻿using Core.Abstractions;
-using Core.Abstractions.Operations;
-using Core.BusinessModels;
-using Core.BusinessModels.QueryListMdel;
-using Core.Entities;
-using Core.Exceptions;
+﻿using NorthWndCore.Abstractions;
+using NorthWndCore.Abstractions.Operations;
+using NorthWndCore.BusinessModels;
+using NorthWndCore.BusinessModels.QueryListMdel;
+using NorthWndCore.Entities;
+using NorthWndCore.Exceptions;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;

@@ -2,41 +2,41 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Core.Abstractions.Operations;
-using Core.BusinessModels;
+using NorthWndCore.Abstractions.Operations;
+using NorthWndCore.BusinessModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace NORTHWNDProject.Controllers
+namespace NorthWndAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
     public class EmployeeController : Controller
     {
-        private readonly IEmployeeOperations _employeeOperations;
-        public EmployeeController(IEmployeeOperations employeeOperations)
+        private readonly IEmployeeOperations _employee;
+        public EmployeeController(IEmployeeOperations employee)
         {
-            _employeeOperations = employeeOperations;
+            _employee = employee;
         }
 
         [HttpGet("{id}")]
         public IActionResult GetById([FromRoute]int id)
         {
-            var result = _employeeOperations.Get(id);
+            var result = _employee.Get(id);
             return Ok(result);
         }
 
         [HttpGet]
         public IActionResult GetAll()
         {
-            var result = _employeeOperations.GetAll();
+            var result = _employee.GetAll();
             return Ok(result);
         }
 
         [HttpPost]
         public IActionResult Add([FromBody]EmployeeViewModel model )
         {
-            var result = _employeeOperations.Add(model);
+            var result = _employee.Add(model);
             return Ok(result);
         }
 
@@ -44,7 +44,7 @@ namespace NORTHWNDProject.Controllers
         [Authorize(Roles ="Admin")]
         public IActionResult Update([FromBody]EmployeeViewModel model)
         {
-            var result = _employeeOperations.Update(model);
+            var result = _employee.Update(model);
             return Ok(result);
         }
 
@@ -52,7 +52,7 @@ namespace NORTHWNDProject.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult Delete([FromRoute]int id )
         {
-            _employeeOperations.Delete(id);
+            _employee.Delete(id);
             return Ok();
         }
 

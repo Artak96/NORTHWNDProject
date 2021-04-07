@@ -8,7 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
 
-namespace NORTHWNDProject
+namespace NorthWndAPI
 {
     public class Program
     {

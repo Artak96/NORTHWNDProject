@@ -1,10 +1,10 @@
-﻿using Core.BusinessModels.QueryListMdel;
-using Core.Entities;
+﻿using NorthWndCore.BusinessModels.QueryListMdel;
+using NorthWndCore.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core.Abstractions.Repositories
+namespace NorthWndCore.Abstractions.Repositories
 {
     public interface IProductRepository : IRepositoryBase<Product>
     {

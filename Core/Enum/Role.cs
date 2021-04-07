@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core.Enum
+namespace NorthWndCore.Enum
 {
     public enum Role
     {

@@ -1,10 +1,10 @@
-﻿using Core.Abstractions.Repositories;
-using Core.Entities;
+﻿using NorthWndCore.Abstractions.Repositories;
+using NorthWndCore.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DAL.Repositories
+namespace NorthWndDAL.Repositories
 {
     public class SupplierRepository : RepositoryBase<Supplier>,ISupplierRepository
     {

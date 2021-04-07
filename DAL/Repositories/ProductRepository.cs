@@ -1,12 +1,12 @@
-﻿using Core.Abstractions.Repositories;
-using Core.BusinessModels.QueryListMdel;
-using Core.Entities;
+﻿using NorthWndCore.Abstractions.Repositories;
+using NorthWndCore.BusinessModels.QueryListMdel;
+using NorthWndCore.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 
-namespace DAL.Repositories
+namespace NorthWndDAL.Repositories
 {
     public class ProductRepository : RepositoryBase<Product>,IProductRepository
     {

@@ -1,11 +1,11 @@
 ﻿using System;
-using DAL.Configuration;
+using NorthWndDAL.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
-namespace Core.Entities
+namespace NorthWndCore.Entities
 {
     public partial class NORTHWNDContext : DbContext
     {
@@ -49,7 +49,6 @@ namespace Core.Entities
         public virtual DbSet<Supplier> Suppliers { get; set; }
         public virtual DbSet<Territory> Territories { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<UserRole> UserRoles { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -124,8 +123,6 @@ namespace Core.Entities
             modelBuilder.ApplyConfiguration(new TerritoryConfiguration());
 
             modelBuilder.ApplyConfiguration(new UserConfiguration());
-
-            modelBuilder.ApplyConfiguration(new UserRoleConfiguration());
 
             OnModelCreatingPartial(modelBuilder);
         }

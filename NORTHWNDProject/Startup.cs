@@ -3,22 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BLL.Operations;
-using Core.Abstractions;
-using Core.Abstractions.Operations;
-using Core.Entities;
-using DAL;
+using NorthWndCore.Abstractions;
+using NorthWndCore.Abstractions.Operations;
+using NorthWndCore.Entities;
+using NorthWndDAL;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using NORTHWNDProject.Middlewares;
+using NorthWndAPI.Middlewares;
 
-namespace NORTHWNDProject
+namespace NorthWndAPI
 {
     public class Startup
     {
@@ -37,9 +34,8 @@ namespace NORTHWNDProject
                 x.UseSqlServer("Server=LAPTOP-5FTFC6HC;Database=NORTHWND;Trusted_Connection=True;");
             });
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-              .AddCookie(options => //CookieAuthenticationOptions
+              .AddCookie(options => 
               {
-                  //   options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
               });
             services.AddControllers();
             services.AddScoped<IRepositoryManager, RepositoryManager>();

@@ -1,11 +1,11 @@
-﻿using Core.Entities;
+﻿using NorthWndCore.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DAL.Configuration
+namespace NorthWndDAL.Configuration
 {
     class ProductSalesFor1997Configuration : IEntityTypeConfiguration<ProductSalesFor1997>
     {

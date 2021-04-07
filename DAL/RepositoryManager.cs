@@ -1,14 +1,14 @@
-﻿using Core.Abstractions;
-using Core.Abstractions.Repositories;
-using Core.Entities;
-using DAL.Repositories;
+﻿using NorthWndCore.Abstractions;
+using NorthWndCore.Abstractions.Repositories;
+using NorthWndCore.Entities;
+using NorthWndDAL.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL
+namespace NorthWndDAL
 {
     public class RepositoryManager : IRepositoryManager
     {

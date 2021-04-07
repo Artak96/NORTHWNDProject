@@ -1,9 +1,9 @@
-﻿using Core.Entities;
+﻿using NorthWndCore.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core.Abstractions.Repositories
+namespace NorthWndCore.Abstractions.Repositories
 {
     public interface IEmployeRepository : IRepositoryBase<Employee>
     {

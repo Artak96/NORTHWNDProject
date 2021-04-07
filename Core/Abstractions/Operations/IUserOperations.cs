@@ -1,11 +1,11 @@
-﻿using Core.BusinessModels;
+﻿using NorthWndCore.BusinessModels;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Abstractions.Operations
+namespace NorthWndCore.Abstractions.Operations
 {
     public interface IUserOperations
     {

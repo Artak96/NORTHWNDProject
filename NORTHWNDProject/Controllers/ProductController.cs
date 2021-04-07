@@ -2,41 +2,41 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Core.Abstractions.Operations;
-using Core.BusinessModels;
+using NorthWndCore.Abstractions.Operations;
+using NorthWndCore.BusinessModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace NORTHWNDProject.Controllers
+namespace NorthWndAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
     public class ProductController : Controller
     {
-        private readonly IProductOperations _productOperations;
-        public ProductController(IProductOperations productOperations)
+        private readonly IProductOperations _product;
+        public ProductController(IProductOperations product)
         {
-            _productOperations = productOperations;
+            _product = product;
         }
 
         [HttpGet("{id}")]
         public IActionResult GetById([FromRoute] int id)
         {
-            var result = _productOperations.Get(id);
+            var result = _product.Get(id);
             return Ok(result);
         }
 
         [HttpGet]
         public IActionResult GetAll()
         {
-            var result = _productOperations.GetAll();
+            var result = _product.GetAll();
             return Ok(result);
         }
 
         [HttpPost]
         public IActionResult Add([FromBody]ProductViewModel model)
         {
-            var result = _productOperations.Add(model);
+            var result = _product.Add(model);
             return Ok(result);
         }
 
@@ -44,7 +44,7 @@ namespace NORTHWNDProject.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult Update([FromBody]ProductViewModel model)
         {
-            var result = _productOperations.Update(model);
+            var result = _product.Update(model);
             return Ok(result);
             
         }
@@ -53,21 +53,21 @@ namespace NORTHWNDProject.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult Delete([FromRoute] int id)
         {
-             _productOperations.Delete(id);
+             _product.Delete(id);
             return Ok();
         }
 
         [HttpGet("Productsneedreorderings")]
         public IActionResult Productsneedreorderings()
         {
-            var res = _productOperations.GetProductsneedreorderings();
+            var res = _product.GetProductsneedreorderings();
             return Ok(res);
         }
 
         [HttpGet("Productsthatneedreorderings")]
         public IActionResult Productsthatneedreorderings()
         {
-            var res = _productOperations.GetProductsthatneedreorderings();
+            var res = _product.GetProductsthatneedreorderings();
             return Ok(res);
         }
 

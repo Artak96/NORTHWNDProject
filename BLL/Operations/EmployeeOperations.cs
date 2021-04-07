@@ -1,8 +1,8 @@
-﻿using Core.Abstractions;
-using Core.Abstractions.Operations;
-using Core.BusinessModels;
-using Core.Entities;
-using Core.Exceptions;
+﻿using NorthWndCore.Abstractions;
+using NorthWndCore.Abstractions.Operations;
+using NorthWndCore.BusinessModels;
+using NorthWndCore.Entities;
+using NorthWndCore.Exceptions;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -97,17 +97,5 @@ namespace BLL.Operations
             return employee;
         }
 
-        //public IEnumerable<EmployeeInfoModel> GetEmployeeInfo()
-        //{
-        //    var data = _repositoryManager.Employes.GetAll();
-        //    var resualt = data.Select(x => new EmployeeInfoModel
-        //    {
-        //         BirthDate = x.BirthDate,
-        //         FirstName=x.FirstName,
-        //         LastName=x.LastName,
-        //         Title=x.Title
-        //    }).OrderBy(u=>u.BirthDate);
-        //    return resualt;
-        //}
     }
 }

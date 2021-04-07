@@ -22,9 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj" />
-    <ProjectReference Include="..\Core\Core.csproj" />
-    <ProjectReference Include="..\DAL\DAL.csproj" />
+    <ProjectReference Include="..\BLL\NorthWnd.BLL.csproj" />
+    <ProjectReference Include="..\Core\NorthWnd.Core.csproj" />
+    <ProjectReference Include="..\DAL\NorthWnd.DAL.csproj" />
   </ItemGroup>
 
   <ItemGroup>

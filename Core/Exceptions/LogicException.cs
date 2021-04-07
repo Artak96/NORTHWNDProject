@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core.Exceptions
+namespace NorthWndCore.Exceptions
 {
     public class LogicException : Exception
     {

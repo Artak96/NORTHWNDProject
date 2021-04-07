@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core.Abstractions.Repositories
+namespace NorthWndCore.Abstractions.Repositories
 {
     public interface IRepositoryBase<T> where T : class
     {

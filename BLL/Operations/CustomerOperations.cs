@@ -1,16 +1,16 @@
-﻿using Core.Abstractions;
-using Core.Abstractions.Operations;
-using Core.BusinessModels;
-using Core.BusinessModels.QueryListMdel;
-using Core.Entities;
-using Core.Exceptions;
+﻿using NorthWndCore.Abstractions;
+using NorthWndCore.Abstractions.Operations;
+using NorthWndCore.BusinessModels;
+using NorthWndCore.BusinessModels.QueryListMdel;
+using NorthWndCore.Entities;
+using NorthWndCore.Exceptions;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BLL.Operations
+namespace NorthWndBLL.Operations
 {
     public class CustomerOperations : ICustomerOperations
     {

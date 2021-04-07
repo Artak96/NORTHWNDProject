@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Core.Abstractions
+namespace NorthWndCore.Abstractions
 {
     public interface IDatabaseTransaction : IDisposable
     {

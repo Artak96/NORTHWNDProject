@@ -11,9 +11,9 @@ namespace NorthWndAPI.Controllers
     public class CustomerController : ControllerBase
     {
         private readonly ICustomerOperations _customer;
-        public CustomerController(ICustomerOperations customerOperations)
+        public CustomerController(ICustomerOperations customer)
         {
-            _customer = customerOperations;
+            _customer = customer;
         }
 
         [HttpGet("{id}")]

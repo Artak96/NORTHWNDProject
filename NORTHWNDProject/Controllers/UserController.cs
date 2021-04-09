@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using NorthWndCore.Abstractions;
 using NorthWndCore.Abstractions.Operations;
 using NorthWndCore.BusinessModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace NorthWndAPI.Controllers
 {

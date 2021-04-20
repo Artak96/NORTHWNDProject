@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BLL.Operations;
+using NorthWndBLL.Operations;
 using NorthWndCore.Abstractions;
 using NorthWndCore.Abstractions.Operations;
 using NorthWndCore.Entities;

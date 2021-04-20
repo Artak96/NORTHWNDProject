@@ -15,7 +15,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL.Operations
+namespace NorthWndBLL.Operations
 {
     public class OrderOperations : IOrderOperations
     {

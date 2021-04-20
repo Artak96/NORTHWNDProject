@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BLL.Operations
+namespace NorthWndBLL.Operations
 {
     public class EmployeeOperations : IEmployeeOperations
     {
